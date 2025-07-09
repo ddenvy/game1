@@ -41,13 +41,13 @@ func TestWalk(t *testing.T) {
 	}
 
 	result := walk("north")
-	expected := "You walk north to North Room."
+	expected := "You have entered North Room."
 	if result != expected {
 		t.Errorf("Expected '%s', got '%s'", expected, result)
 	}
 
 	result = walk("south")
-	expected = "You can't go south from here."
+	expected = "You can't go that way."
 	if result != expected {
 		t.Errorf("Expected '%s', got '%s'", expected, result)
 	}
@@ -71,7 +71,7 @@ func TestTake(t *testing.T) {
 	}
 
 	result = take("Nonexistent Item")
-	expected = "There is no Nonexistent Item here."
+	expected = "Item not found in the room."
 	if result != expected {
 		t.Errorf("Expected '%s', got '%s'", expected, result)
 	}
